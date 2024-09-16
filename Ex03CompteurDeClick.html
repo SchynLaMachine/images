@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Compteur de clics</title>
+    <style>
+      p {
+        font-family: "Arial", sans-serif;
+      }
+    </style>
+  </head>
+  <body>
+    <p>Vous avez cliqué <b id="nb">0</b> fois</p>
+    <button id="mon-bouton">Cliquez ici</button>
+
+    <script>
+      let x = 0; // Variable pour compter les clics
+
+      // Sélection du bouton et du compteur avec querySelector
+      const bouton = document.querySelector("#mon-bouton");
+      const compteur = document.querySelector("#nb");
+
+      // Ajout d'un événement 'click' au bouton
+      bouton.addEventListener("click", function () {
+        x++; // Incrémente le compteur
+        compteur.textContent = x; // Met à jour le texte dans l'élément avec id 'nb'
+      });
+    </script>
+  </body>
+</html>

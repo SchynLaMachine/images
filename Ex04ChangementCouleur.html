@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Changer la couleur de fond</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+      }
+      #color-picker {
+        margin-top: 20px;
+      }
+      button {
+        margin-top: 20px;
+        padding: 10px;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        cursor: pointer;
+        font-size: 16px;
+      }
+      button:hover {
+        background-color: #0056b3;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Choisissez une couleur pour le fond</h1>
+
+    <!-- Formulaire avec un sélecteur de couleur et un bouton -->
+    <form id="color-form">
+      <label for="color-picker">Sélectionnez une couleur :</label>
+      <input type="color" id="color-picker" name="color" value="#ffffff" />
+      <br />
+      <button type="submit">Appliquer la couleur de fond</button>
+    </form>
+
+    <script>
+      // Sélectionne le formulaire, le sélecteur de couleur et le bouton
+      const form = document.querySelector("#color-form");
+      const colorPicker = document.querySelector("#color-picker");
+
+      // Ajouter un événement lors de la soumission du formulaire
+      form.addEventListener("submit", function (event) {
+        event.preventDefault(); // Empêche le rechargement de la page
+        document.body.style.backgroundColor = colorPicker.value; // Change la couleur de fond
+      });
+    </script>
+  </body>
+</html>
